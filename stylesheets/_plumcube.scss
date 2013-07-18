@@ -1,0 +1,93 @@
+/* constructor function for building generic animations */
+@mixin keyframes ($animation_name) {
+	@-webkit-keyframes $animation_name {
+		@content;
+	}
+	@keyframes $animation_name {
+		@content;
+	}
+}
+
+/* generic constructor for adding animations without that silly -webkit prefix */
+@mixin animation($params) {
+	animation: $params;
+        -webkit-animation: $params;
+}
+
+/* keyframe definition for spin animation */
+@mixin spin($axis) {
+	@include keyframes(spin+$axis) {
+		from {
+			@include transform(rotate+$axis+'(0deg)');
+		}
+		to {
+			@include transform(rotate+$axis+'(360deg)');
+		}
+	}
+}
+
+/* build out keyframe definitions for all 3 axis */
+@include spin(X);
+@include spin(Y);
+@include spin(Z);
+
+/* call an infinite spinner along a specific axis */
+@mixin spinme($direction, $speed) {
+	@include animation(spin+$direction $speed linear infinite);
+}
+
+
+@mixin cube($x, $y, $z, $perspective, $origin) {
+	@include perspective($perspective+px);
+        @include perspective-origin($origin+'%');
+	width: $x + px;
+	height: $z + px;
+	.cube-z, .cube-y, .cube-x {
+		@include transform-style(preserve-3d);
+		@include transition(all 1s ease-in-out);
+	}
+	.cube-x {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		position: relative;
+		width: $x + px;
+		height: $y + px;
+		
+		li {
+			display: block;
+			position: absolute;
+			&:nth-child(1), &:nth-child(2), &:nth-child(3), &:nth-child(4) {
+				height: $y+px;
+			}
+			&:nth-child(5), &:nth-child(6) {
+				height: $z+px;
+			}
+			&:nth-child(1), &:nth-child(3), &:nth-child(5), &:nth-child(6) {
+				width: $x+px;
+			}
+			&:nth-child(2), &:nth-child(4) {
+				width: $z+px;
+			}
+			&:nth-child(1) {
+				@include transform(translateZ(($z/2)+px));
+			}
+			&:nth-child(2) {
+				@include transform(rotateY(90deg) translateZ($x - ($z/2)+px));
+			}
+			&:nth-child(3) {
+				@include transform(rotateY(180deg) translateZ(($z/2)+px));
+			}
+			&:nth-child(4) {
+				@include transform(rotateY(-90deg) translateZ(($z/2)+px));
+			}
+			&:nth-child(5) {
+				@include transform(rotateX(90deg) translateZ(($z/2)+px));
+			}
+			&:nth-child(6) {
+				@include transform(rotateX(90deg) translateZ(-($x - ($z/2))+px));
+				
+			}
+		}
+	}
+}
