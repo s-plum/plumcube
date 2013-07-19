@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   # Release Specific Information
-  s.version = "0.0.2"
-  s.date = "2013-07-18"
+  s.version = "0.0.4"
+  s.date = "2013-07-19"
 
   # Gem Details
   s.name = "plumcube"
@@ -9,14 +9,19 @@ Gem::Specification.new do |s|
   s.summary = %q{a css 3D animation extension for compass}
   s.description = %q{turn a list into a 3D object of any shape and size... as long as that shape is a cube}
   s.email = "stephanie.plumeri@gmail.com"
-  s.homepage = "http://stephanieplumeri.net/"
+  s.homepage = "https://github.com/s-plum/plumcube"
+  s.licenses = ['MIT', 'GPL-2']
 
   # Gem Files
   s.files = %w(readme.md)
   s.files += Dir.glob("lib/**/*.*")
   s.files += Dir.glob("stylesheets/**/*.*")
-
+  s.extra_rdoc_files = ['lib/docs/readme.txt']
+  s.rdoc_options << '--title' << 'plumcube [beta]' <<
+  '--main' << 'lib/docs/readme.txt'
+  
   # Gem Bookkeeping
   s.rubygems_version = %q{1.3.6}
-  s.add_dependency("compass", [">= 0.11"])
+  s.add_dependency("sass", [">=3.2.0"])
+  s.add_dependency("compass", [">= 0.12.1"])
 end

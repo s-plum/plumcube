@@ -1,43 +1,10 @@
-/* constructor function for building generic animations */
-@mixin keyframes ($animation_name) {
-	@-webkit-keyframes $animation_name {
-		@content;
-	}
-	@keyframes $animation_name {
-		@content;
-	}
-}
+@import 'plumcube/helpers';
 
-/* generic constructor for adding animations without that silly -webkit prefix */
-@mixin animation($params) {
-	animation: $params;
-        -webkit-animation: $params;
-}
-
-/* keyframe definition for spin animation */
-@mixin spin($axis) {
-	@include keyframes(spin+$axis) {
-		from {
-			@include transform(rotate+$axis+'(0deg)');
-		}
-		to {
-			@include transform(rotate+$axis+'(360deg)');
-		}
-	}
-}
-
-/* build out keyframe definitions for all 3 axis */
-@include spin(X);
-@include spin(Y);
-@include spin(Z);
-
-/* call an infinite spinner along a specific axis */
-@mixin spinme($direction, $speed) {
+@mixin spincube($direction, $speed) {
 	@include animation(spin+$direction $speed linear infinite);
 }
 
-
-@mixin cube($x, $y, $z, $perspective, $origin) {
+@mixin plumcube($x, $y, $z, $perspective, $origin) {
 	@include perspective($perspective+px);
         @include perspective-origin($origin+'%');
 	width: $x + px;
