@@ -1,5 +1,7 @@
-/* constructor function for building generic animations */
-@mixin keyframes ($animation_name) {
+/* ==================================================
+keyframes animation builder -> adds -webkit prefix
+================================================== */
+@mixin private-keyframes ($animation_name) {
 	@-webkit-keyframes $animation_name {
 		@content;
 	}
@@ -7,16 +9,19 @@
 		@content;
 	}
 }
-
-/* generic constructor for adding animations without that silly -webkit prefix */
-@mixin animation($params) {
+/* ==================================================
+animation property builder -> adds -webkit prefix
+================================================== */
+@mixin private-animation($params) {
 	animation: $params;
-        -webkit-animation: $params;
+    -webkit-animation: $params;
 }
 
-/* keyframe definition for spin animation */
-@mixin spin($axis) {
-	@include keyframes(spin+$axis) {
+/* ==================================================
+css transform for 360-degree spin
+================================================== */
+@mixin private-spin($axis) {
+	@include private-keyframes(private-spin+$axis) {
 		from {
 			@include transform(rotate+$axis+'(0deg)');
 		}
@@ -26,7 +31,9 @@
 	}
 }
 
-/* build out keyframe definitions for all 3 axis */
-@include spin(X);
-@include spin(Y);
-@include spin(Z);
+/* ==================================================
+define 360-degree spin for each axis
+================================================== */
+@include private-spin(X);
+@include private-spin(Y);
+@include private-spin(Z);

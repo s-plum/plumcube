@@ -1,12 +1,14 @@
+/* ==================================================
+import helper functions
+================================================== */
 @import 'plumcube/helpers';
 
-@mixin spincube($direction, $speed) {
-	@include animation(spin+$direction $speed linear infinite);
-}
-
+/* ==================================================
+cube it up
+================================================== */
 @mixin plumcube($x, $y, $z, $perspective, $origin) {
 	@include perspective($perspective+px);
-        @include perspective-origin($origin+'%');
+    @include perspective-origin($origin+'%');
 	width: $x + px;
 	height: $z + px;
 	.cube-z, .cube-y, .cube-x {
@@ -57,4 +59,11 @@
 			}
 		}
 	}
+}
+
+/* ==================================================
+360-degree cube rotation
+================================================== */
+@mixin spincube($direction, $speed) {
+	@include private-animation(private-spin+to_upper_case($direction) $speed linear infinite);
 }
