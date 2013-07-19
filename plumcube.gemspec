@@ -16,9 +16,6 @@ Gem::Specification.new do |s|
   s.files = %w(readme.md)
   s.files += Dir.glob("lib/**/*.*")
   s.files += Dir.glob("stylesheets/**/*.*")
-  s.extra_rdoc_files = ['lib/docs/readme.txt']
-  s.rdoc_options << '--title' << 'plumcube [beta]' <<
-  '--main' << 'lib/docs/readme.txt'
   
   # Gem Bookkeeping
   s.rubygems_version = %q{1.3.6}
