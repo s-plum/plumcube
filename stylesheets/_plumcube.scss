@@ -7,8 +7,20 @@ import helper functions
 cube it up
 ================================================== */
 @mixin plumcube($x, $y, $z, $perspective, $origin) {
+	/* ====================================================================================
+	where
+		$x = cube width, in pixels
+		$y = cube length, in pixels
+		$z = cube depth, in pixels
+		$perspective = distance of shape from screen along z-axis
+					   (smaller numbers create more shape/perspective distortion)
+		$origin = defines the origin of the 3D perspective
+		          (see https://developer.mozilla.org/en-US/docs/Web/CSS/perspective-origin
+				   for all possible values)
+	==================================================================================== */
+	
 	@include perspective($perspective+px);
-    @include perspective-origin($origin+'%');
+    @include perspective-origin($origin);
 	width: $x + px;
 	height: $z + px;
 	.cube-z, .cube-y, .cube-x {

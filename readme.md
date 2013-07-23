@@ -36,4 +36,33 @@ Each face of your plumcube must be marked up as an unordered list, wrapped up in
     
 Note that the `your-cube` class can have any name, but the `cube-z`, `cube-y`, and `cube-x` classes need to remain in place in order for your cube to render properly. You can also add any additional classes or unique identifiers to the list items, the unordered list, and/or the container elements.
 
+### In the scss
+Import compass and plumcube:
+
+	@import "compass/css3;"
+	@import "plumcube";
+	
+Include the plumcube mixin in the styles of the outermost wrapper element. The plumcube mixin parameters are:
+
+	@mixin plumcube($x, $y, $z, $perspective, $origin);
+	
+	/* ====================================================================================
+	where
+		$x = cube width, in pixels
+		$y = cube length, in pixels
+		$z = cube depth, in pixels
+		$perspective = distance of shape from screen along z-axis
+					   (smaller numbers create more shape/perspective distortion)
+		$origin = defines the origin of the 3D perspective
+		          (see https://developer.mozilla.org/en-US/docs/Web/CSS/perspective-origin
+				   for all possible values)
+	==================================================================================== */
+
+If you wanted a cube 200px x 200px x 200px, with a perspective of 1200px originating at the center of the cube, your code would look like:
+
+	.your-cube {
+		@include plumcube(200, 200, 200, 1200, 50%); /* cube it up */
+		margin: 100px 26%;
+	}
+
 ### Stay tuned for the next installment, in which I actually attempt to sit down and focus for long enough to complete these instructions!
