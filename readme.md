@@ -1,6 +1,6 @@
 # plumcube
 
-**A compass mixin for creating 3D cubes of all shapes and sizes... as long as that shape is a cube.**
+**A compass extension for creating 3D cubes of all shapes and sizes... as long as that shape is a cube.**
 
 ## Ex-ante
 
@@ -44,7 +44,7 @@ Import compass and plumcube:
 	
 Include the plumcube mixin in the styles of the outermost wrapper element. The plumcube mixin parameters are:
 
-	@mixin plumcube($x, $y, $z, $perspective, $origin);
+	@mixin plumcube($x, $y, $z, $perspective, $origin)
 	
 	/* ====================================================================================
 	where
@@ -65,4 +65,66 @@ If you wanted a cube 200px x 200px x 200px, with a perspective of 1200px origina
 		margin: 100px 26%;
 	}
 
-### Stay tuned for the next installment, in which I actually attempt to sit down and focus for long enough to complete these instructions!
+You can then apply other styling to the elements within your cube, including rotating it along one of its axes:
+
+	.cube-x {
+		@include transform(rotateX(10deg)); /* rotate the cube 10 degrees along the x-axis */
+		
+		li {
+			opacity: .5; /* set opacity to see all faces of cube */
+			
+			&:nth-child(1) { /* front face */
+				background: #f00; 
+			}
+			&:nth-child(2) { /* right face */
+				background: #ff0; 
+			}
+			&:nth-child(3) { /* back face */
+				background: #ff00ff; 
+			}
+			&:nth-child(4) { /* left face */
+				background: #123456; 
+			}
+			&:nth-child(5) { /* top face */
+				background: #dd0000;
+			}
+			&:nth-child(6) { /* bottom face */
+				background: #000;
+			}
+		}
+	}
+	
+### Take it for a spin
+After you recover from that terrible pun, you can include the `spincube` mixin in your container styles to set the cube on a continuous rotation around one or more of its axes:
+	
+	@mixin spincube($axis, $speed)
+	
+	/* ====================================================================================
+	where
+		$axis = axis to spin
+		$speed = time it takes to complete one rotation, in seconds or milliseconds
+	==================================================================================== */
+	
+You need to call the mixin on the container representing the axis that you want to set spinning:
+
+	.cube-x {
+		@include spincube(x, 200ms);
+	}
+	.cube-y {
+		@include spincube(y, 5s);
+	}
+	.cube-z {
+		@include spincube(z, 1s);
+	}
+
+
+You can technically spin all 3 axes at once, but the animation looks best when kept simple and limited to one axis. If you want to spin the cube in the opposite direction from the default, add the optional `reverse` parameter to your include:
+
+	.cube-y {
+		@include spincube(y, 5s, reverse);
+	}
+
+##Questions? Comments? Concerns? Hugs?*
+Please feel free to contact me with any feedback you may have. The plumcube welcomes all.
+
+**Note: Hugs only accepted under the condition that the hug-giver has bathed/showered within the past 24 hours, and is not covered with any contaminants, foreign or otherwise, at the time of hug delivery.*

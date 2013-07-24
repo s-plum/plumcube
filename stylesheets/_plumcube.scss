@@ -76,6 +76,15 @@ cube it up
 /* ==================================================
 360-degree cube rotation
 ================================================== */
-@mixin spincube($direction, $speed) {
-	@include private-animation(private-spin+to_upper_case($direction) $speed linear infinite);
+@mixin spincube($axis, $speed, $reverse:"") {
+	/* ====================================================================================
+	where
+		$axis = axis to spin
+		$speed = time it takes to complete one rotation, in seconds or milliseconds
+	==================================================================================== */
+	@if $reverse != "" {
+		@include private-animation(spin+to_upper_case($axis) $speed linear infinite reverse);
+	} @else {
+		@include private-animation(spin+to_upper_case($axis) $speed linear infinite);
+	}
 }

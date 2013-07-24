@@ -20,8 +20,8 @@ animation property builder -> adds -webkit prefix
 /* ==================================================
 css transform for 360-degree spin
 ================================================== */
-@mixin private-spin($axis) {
-	@include private-keyframes(private-spin+$axis) {
+@mixin spin($axis) {
+	@include private-keyframes(spin+$axis) {
 		from {
 			@include transform(rotate+$axis+'(0deg)');
 		}
@@ -34,6 +34,6 @@ css transform for 360-degree spin
 /* ==================================================
 define 360-degree spin for each axis
 ================================================== */
-@include private-spin(X);
-@include private-spin(Y);
-@include private-spin(Z);
+@include spin(X);
+@include spin(Y);
+@include spin(Z);
