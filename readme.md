@@ -127,4 +127,4 @@ You can technically spin all 3 axes at once, but the animation looks best when k
 ##Questions? Comments? Concerns? Hugs?*
 Please feel free to contact me with any feedback you may have. The plumcube welcomes all.
 
-**Note: Hugs only accepted under the condition that the hug-giver has bathed/showered within the past 24 hours, and is not covered with any contaminants, foreign or otherwise, at the time of hug delivery.*
+_*Note: Hugs only accepted under the condition that the hug-giver has bathed/showered within the past 24 hours, and is not covered with any contaminants, foreign or otherwise, at the time of hug delivery._
