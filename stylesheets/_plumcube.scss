@@ -22,7 +22,7 @@ cube it up
 	@include perspective($perspective+px);
     @include perspective-origin($origin);
 	width: $x + px;
-	height: $z + px;
+	height: $y + px;
 	.cube-z, .cube-y, .cube-x {
 		@include transform-style(preserve-3d);
 		@include transition(all 1s ease-in-out);
@@ -66,7 +66,7 @@ cube it up
 				@include transform(rotateX(90deg) translateZ(($z/2)+px));
 			}
 			&:nth-child(6) {
-				@include transform(rotateX(90deg) translateZ(-($x - ($z/2))+px));
+				@include transform(rotateX(90deg) translateZ(-($y - ($z/2))+px));
 				
 			}
 		}

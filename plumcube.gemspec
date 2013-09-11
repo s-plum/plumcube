@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   # Release Specific Information
-  s.version = "0.0.8"
-  s.date = "2013-07-24"
+  s.version = "0.0.9"
+  s.date = "2013-09-10"
 
   # Gem Details
   s.name = "plumcube"
