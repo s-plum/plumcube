@@ -2,6 +2,8 @@
 
 **A compass extension for creating 3D cubes of all shapes and sizes... as long as that shape is a cube.**
 
+Scared? Confused? Intrigued? Check out the [demo page](http://stephanieplumeri.net/plumlabs/plumcube/).
+
 ## Ex-ante
 
 If you think that Boy Scouts use [Compass](http://compass-style.org/) and Girl Scouts have [SASS](http://sass-lang.com/), you might want to click those links first. Plumcube is a Compass extension, so you'll need both SASS and Compass in order to use it. Find your [compass](http://compass-style.org/install/), get [SASS](http://sass-lang.com/download.html)-y, and you'll be good to go.
