@@ -6,9 +6,9 @@ Scared? Confused? Intrigued? Check out the [demo page](http://stephanieplumeri.n
 
 ## Ex-ante
 
-If you think that Boy Scouts use [Compass](http://compass-style.org/) and Girl Scouts have [SASS](http://sass-lang.com/), you might want to click those links first. Plumcube is a Compass extension, so you'll need both SASS and Compass in order to use it. Find your [compass](http://compass-style.org/install/), get [SASS](http://sass-lang.com/download.html)-y, and you'll be good to go.
+If you think that Boy Scouts use [Compass](http://compass-style.org/) and Girl Scouts have [Sass](http://sass-lang.com/), you might want to click those links first. Plumcube is a Compass extension, so you'll need both Sass and Compass in order to use it. Find your [compass](http://compass-style.org/install/), get [Sass](http://sass-lang.com/download.html)-y, and you'll be good to go.
 
-Note that the plumcube plugin relies on the 'Bleeding Edge' version of SASS, because 3D CSS animation is the Internet of the future. If you are already a SASS-y individual, be sure to check your currently installed version (`sass -v`) and upgrade to the pre-release gem (3.3.0.alpha - get it with `gem install sass --pre`) if necessary.
+Note that the plumcube plugin relies on the 'Bleeding Edge' version of Sass, because 3D CSS animation is the Internet of the future. If you are already a Sass-y individual, be sure to check your currently installed version (`sass -v`) and upgrade to the pre-release gem (3.3.0.alpha - get it with `gem install sass --pre`) if necessary.
 
 ## Get plumcube'n
 

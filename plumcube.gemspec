@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   # Release Specific Information
-  s.version = "0.0.9"
-  s.date = "2013-09-10"
+  s.version = "0.1.4"
+  s.date = "2014-04-10"
 
   # Gem Details
   s.name = "plumcube"
@@ -19,6 +19,6 @@ Gem::Specification.new do |s|
   
   # Gem Bookkeeping
   s.rubygems_version = %q{1.3.6}
-  s.add_dependency("sass", [">3.2.9"])
-  s.add_dependency("compass", [">= 0.12.1"])
+  s.add_runtime_dependency("sass", "~>3.4", ">= 3.4.5")
+  s.add_runtime_dependency("compass", "~>1.0", ">= 1.0.0.alpha.19")
 end
